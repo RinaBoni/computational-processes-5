@@ -3,16 +3,13 @@
 
 __author__ ="Borisova Ekaterina IVT20"
 
-num = []
+import ar
 
 n =int(input ("Введите количество элементов в массиве: "))
 
-for i in range(n):
-    num.append(float(input(f"Введите {i+1}-е число: ")))
-    
-sum = 0
+a=[]
 
-for i in range(n):
-    sum = sum + num[i]**2
+a = (ar.ar_filling(a, n))
 
-print(f"Сумма равна: {sum}")
+print(a)
+print(ar.calc(a,n))
