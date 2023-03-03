@@ -3,13 +3,11 @@
 
 __author__ ="Borisova Ekaterina IVT20"
 
-import ar
+import ar5
 
 n =int(input ("Введите количество элементов в массиве: "))
 
-a=[]
-
-a = (ar.ar_filling(a, n))
+a = (ar5.ar_filling(a, n))
 
 print(a)
-print(ar.calc(a,n))
+print(ar5.calc(a,n))
