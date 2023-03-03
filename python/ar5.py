@@ -6,13 +6,15 @@ __author__ ="Borisova Ekaterina IVT20"
 #подключение numpy
 import numpy as np
 
-def ar_filling(a, n:int):
+def ar_filling(a:int):
     """получет массив и кол-во элементов в нем, заполняет массив и возвращает его"""
-    a = np.random.randint(low=0, high=100, size=n)
+    a = np.random.randint(low=0, high=100, size=len(a))
     return a
-def calc(a,n):
+
+def calc(a):
+    """вычисляет a1^2 + ... + an^2"""
     sum = 0
-    for i in range(n):
+    for i in range(len(a)):
         sum =sum + a[i]**2
     return sum
 

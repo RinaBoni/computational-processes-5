@@ -7,7 +7,8 @@ import ar5
 
 n =int(input ("Введите количество элементов в массиве: "))
 
-a = (ar5.ar_filling(a, n))
+a=[]
+a = (ar5.ar_filling(a))
 
 print(a)
-print(ar5.calc(a,n))
+print(f"Результат равен: {ar5.calc(a)}")
