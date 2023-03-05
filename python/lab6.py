@@ -4,13 +4,16 @@
 
 __author__ ="Borisova Ekaterina IVT20"
 
-import ar6
+import ar
+import mth
 
 n =int(input ("Введите количество элементов в массиве: "))
 
 a=[]
-a = (ar6.ar_filling(a))
+
+a = (ar.ar_filling(a, n))
+
 
 print(a)
-print(ar6.calc(a))
-#print(f"Результат равен: {ar6.calc(a,n)}")
+#print(ar6.calc(a))
+print(f"Результат равен: {mth.calc6(a)}")
