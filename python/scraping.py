@@ -19,7 +19,7 @@ map = {}
 id = 0
 
 #максимальное количество страниц
-max_pages = 2
+max_pages = 100
 
 for p in range(max_pages):
     
@@ -31,7 +31,7 @@ for p in range(max_pages):
     html_text = requests.get(cur_url).text
 
     #делаем задержки, чтобы не перегружать сервер сайта
-    sleep(3)
+    #sleep(3)
 
     #используем парсер lxml
     #lxml – это библиотека, которая позволяет легко обрабатывать XML и HTML файлы, а также может использоваться для парсинга веб-страниц
@@ -57,17 +57,21 @@ for p in range(max_pages):
 
         #удаляем перенос строки из тегов
         tegs_ready = tegs.replace('\n', ' ')
+        #соеденяем строки
         date = " ".join([dm, year])
 
+        #заносим в мапу
         #map[id]["id"] = id
         map[id]["tegs"] = tegs_ready
         map[id]["headline"] = headline
         map[id]["date"] = date
 
-
+#список с результатом
 result = []
+#индекс списка
 cur_row = 0
 
+#проходимся по мапе и заносим из нее в список
 for id in map.keys():
     result.append([])
     #result[cur_row].append(int(map[id]["id"]))
@@ -77,13 +81,17 @@ for id in map.keys():
 
     cur_row += 1
 
-print(result)
-
+#заносим все в датафрейм
 #df = pd.DataFrame(result, columns = ["news_id", "tegs", "headline", "date"])
 df = pd.DataFrame(result, columns = ["tegs", "headline", "date"])
 
+#создаем файл csv
 filename = 'news.csv'
+#заносим датафрейм в csv файл
 df.to_csv(filename)
+
+print("Готово!")
+
 
 
 
