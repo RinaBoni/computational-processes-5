@@ -6,4 +6,4 @@ __author__ ="Borisova Ekaterina IVT20"
 
 import mth
 
-print(mth.calc7())
+print(mth.calc7(100, 50))

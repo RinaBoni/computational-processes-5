@@ -7,17 +7,18 @@ __author__ ="Borisova Ekaterina IVT20"
 
 import ar
 import mth
+import numpy as np
 
 n =int(input ("Введите количество элементов в квадратной матрице: "))
 
-matrix=[]
+matrix = np.random.randint(low=1, high=15, size=(n, n))
 
 a=[]
 
 a = (ar.ar_filling(a, 10))
-matrix = (ar.mt_filling(a, n))
+#matrix = (ar.mt_filling(a, n))
 
 print(f'массив а', f'{a}', sep='\n')
-print(f"матрица {matrix}")
+print(f'матрица', f'{matrix}', sep='\n')
 
 print (mth.calc8(a, matrix))
