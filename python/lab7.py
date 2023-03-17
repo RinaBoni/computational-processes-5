@@ -6,4 +6,7 @@ __author__ ="Borisova Ekaterina IVT20"
 
 import mth
 
-print(mth.calc7(100, 50))
+n = 100
+m = 50
+
+print(f'Сумма то 1 до {n} сумм от 1 до {m} 1/(i+j**2) равна: {mth.calc7(n, m):.4f}')

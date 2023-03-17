@@ -21,4 +21,8 @@ a = (ar.ar_filling(a, 10))
 print(f'массив а', f'{a}', sep='\n')
 print(f'матрица', f'{matrix}', sep='\n')
 
+print('новый способ')
+print (mth.calc8_2(a, matrix))
+
+print('старый способ')
 print (mth.calc8(a, matrix))
