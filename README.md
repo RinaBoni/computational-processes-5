@@ -1,6 +1,8 @@
 # computational-processes-6 - Теория вычислительных процессов
 
-[успеваемость](https://docs.google.com/spreadsheets/d/1HYFkxtTxYqXsZASsX_ZGsDWGBvevukQZhHgS5r-YzW4/edit#gid=1815098851)
+[Успеваемость](https://docs.google.com/spreadsheets/d/1HYFkxtTxYqXsZASsX_ZGsDWGBvevukQZhHgS5r-YzW4/edit#gid=1815098851)
+
+[Задания](https://github.com/VetrovSV/OOP/blob/master/2021-fall/plan_2.md#домашнее-задание)
 
 ## mathematical task - математические задачи
 
