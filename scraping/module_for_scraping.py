@@ -4,22 +4,19 @@ __author__ ="Borisova Ekaterina IVT20"
 
 from bs4 import BeautifulSoup   #Beautiful Soup — это Python библиотека для скрапинга данных сайтов через HTML код.
 import requests     #Чтобы делать запросы, установите requests (библиотеку для отправки HTTP запросов)
-#import re   #Регулярные выражения
-#from re import sub  #Ищет шаблон в строке и заменяет его на указанную подстроку. Если шаблон не найден, строка остается неизменной.
-#from decimal import Decimal #Модуль decimal обеспечивает поддержку быстрой арифметики с правильно округленным десятичным числом с плавающей запятой.
-#import io   #предоставляет основные средства Python для работы с различными типами ввода/вывода
-#from datetime import datetime   #позволяет управлять датами и временем, представляя их в таком виде, в котором пользователи смогут их понимать.
 import pandas as pd #для работы с данными
 from time import sleep
 
 
 
-def all_pages(max_pages, url, map):
-    """скрапинг страниц"""
-    id = 0
+def all_pages(max_pages, url):
+    """скрапинг max_pages страниц по url ссылке с изменение номера в страницы в конце ссылки"""
+    map = {}
+    #id = 0
 
     for p in range(max_pages):
     
+        #изменение номера страницы
         cur_url = url + str(p + 1)
 
         print("Скрапинг страницы №: %d" % (p + 1))
@@ -38,31 +35,39 @@ def all_pages(max_pages, url, map):
         #находит все новости
         all_news = soup.find_all('div', class_ = 'preview_new')
 
+        #заносим полученное со страницы в словарь
+        news_div_to_map(all_news, map)
         
-        #проходимся по всем новостям
-        for i in range(len(all_news)):
-
-            news = all_news[i]  #в news заносим новость с индексом i
-            id += 1
-            map[id] = {}
-
-            
-            tegs = news.find('div', class_ = 'markersContainer').text   #в tegs заносим теги
-            headline = news.find('div', class_ = 'headline').text   #в headline заносим превью новости
-            dm = news.find('p', class_ = 'day').text   #в day заносим день и месяц публикации
-            year = news.find('p', class_ = 'yearInTileNewsOnPageWithAllNews').text  #в year заносим год публикации
-
-            #удаляем перенос строки из тегов
-            tegs_ready = tegs.replace('\n', ' ')
-            #соеденяем строки
-            date = " ".join([dm, year])
-
-            #заносим в мапу
-            #map[id]["id"] = id
-            map[id]["tegs"] = tegs_ready
-            map[id]["headline"] = headline
-            map[id]["date"] = date
     return map
+
+
+
+def news_div_to_map(all_news, map):
+    """заносим полученное со страницы в словарь"""
+    id = 0
+
+    #проходимся по всем новостям
+    for i in range(len(all_news)):
+
+        news = all_news[i]  #в news заносим новость с индексом i
+        id += 1
+        map[id] = {}
+
+        
+        tegs = news.find('div', class_ = 'markersContainer').text   #в tegs заносим теги
+        headline = news.find('div', class_ = 'headline').text   #в headline заносим превью новости
+        dm = news.find('p', class_ = 'day').text   #в day заносим день и месяц публикации
+        year = news.find('p', class_ = 'yearInTileNewsOnPageWithAllNews').text  #в year заносим год публикации
+
+        #удаляем перенос строки из тегов
+        tegs_ready = tegs.replace('\n', ' ')
+        #соеденяем строки
+        date = " ".join([dm, year])
+
+        #заносим в мапу
+        map[id]["tegs"] = tegs_ready
+        map[id]["headline"] = headline
+        map[id]["date"] = date
 
 
 
@@ -74,7 +79,6 @@ def map_to_list(map, result):
     #проходимся по мапе и заносим данные из нее в список
     for id in map.keys():
         result.append([])
-        #result[cur_row].append(int(map[id]["id"]))
         result[cur_row].append(str(map[id]["tegs"]))
         result[cur_row].append(str(map[id]["headline"]))
         result[cur_row].append(str(map[id]["date"]))

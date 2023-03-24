@@ -13,19 +13,19 @@ url = 'https://zabgu.ru/php/news.php?category=1&page='
 
 #находит теги первой новости
 
-map = {}
+#map = {}
 
 #максимальное количество страниц
 max_pages = 100
 
 #проходимся по страницам и заносим их в мапу(словарь)
-map = ms.all_pages(max_pages, url, map)
+map_articals = ms.all_pages(max_pages, url)
 
 #список с результатом
 result = []
 
 #проходимся по мапе и заносим данные из нее в список
-result = ms.map_to_list(map, result)
+result = ms.map_to_list(map_articals, result)
 
 #заносим все в датафрейм и в csv файл
 ms.to_dataframe(result)
