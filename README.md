@@ -16,7 +16,7 @@
 
 [про скапинг](https://tproger.ru/translations/skraping-sajta-s-pomoshhju-python-gajd-dlja-novichkov/)
 
-
-
+## numpy + matplotlib + seaborn + pandas
+[про heatmap](https://www.codecamp.ru/blog/seaborn-heatmap/)
 
 
