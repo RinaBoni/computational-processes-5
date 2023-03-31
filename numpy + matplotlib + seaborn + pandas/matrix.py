@@ -9,9 +9,9 @@ j = -50
 #создаем и заполняем матрицу
 matrix = np.random.uniform(low=-50, high=50, size=(10,10))
 #создаем тепловую карту
-#sns.heatmap(matrix, annot = True, fmt='.1g',  vmin=-50, vmax=50, center= 0)
+sns.heatmap(matrix, annot = True, fmt='.3g',  vmin=-50, vmax=50, center= 0)
 #показываем тепловую карту
-#plt.show()
+plt.show()
 
 a = matrix.flatten()
 
