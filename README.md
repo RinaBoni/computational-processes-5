@@ -4,6 +4,8 @@
 
 [Задания](https://github.com/ivtipm/ProcessCalculus/blob/master/plans/2023/plan.md#домашнее-задание)
 
+## reports - отчеты
+
 ## mathematical task - математические задачи
 
 
