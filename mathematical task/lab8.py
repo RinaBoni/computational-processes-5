@@ -9,6 +9,9 @@ import ar
 import mth
 import numpy as np
 
+assert mth.calc8_2([4, 7, 7, 10, 10, 9, 3, 1, 1, 3], [[14, 3, 4], [9, 1, 12], [8, 12, 14]]) == [[14, 3, 0], [9, 0, 12], [8, 12, 14]]
+assert mth.calc8_2([13, 2], [[5, 13, 6, 3], [14, 7, 12, 2], [12, 4, 2, 12], [6, 5, 6, 6]]) == [[5, 13, 6, 3], [14, 7, 12, 0], [12, 4, 0, 12], [6, 5, 6, 6]]
+
 n =int(input ("Введите количество элементов в квадратной матрице: "))
 
 matrix = np.random.randint(low=1, high=15, size=(n, n))
@@ -21,8 +24,8 @@ a = (ar.ar_filling(a, 10))
 print(f'массив а', f'{a}', sep='\n')
 print(f'матрица', f'{matrix}', sep='\n')
 
-print('новый способ')
+print('измененная матрица')
 print (mth.calc8_2(a, matrix))
 
-print('старый способ')
-print (mth.calc8(a, matrix))
+#print('старый способ')
+#print (mth.calc8(a, matrix))

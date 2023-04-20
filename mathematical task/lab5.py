@@ -6,6 +6,12 @@ __author__ ="Borisova Ekaterina IVT20"
 import mth
 import ar
 
+
+assert mth.calc5([1]) == 1
+assert mth.calc5([1, 2]) == 5
+assert mth.calc5([1, 2, 3]) == 14
+assert mth.calc5([5, 7, 6, 6, 13]) == 315
+
 n =int(input ("Введите количество элементов в массиве: "))
 
 a=[]

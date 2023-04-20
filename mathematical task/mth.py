@@ -4,6 +4,13 @@ __author__ ="Borisova Ekaterina IVT20"
 
 #подключение numpy
 import numpy as np
+import math as m
+
+
+def calc1(x, y):
+    result = (m.fabs(x) - m.fabs(y)) / (1 + m.fabs(x*y))
+    return result
+
 
 def calc5(a):
     """вычисляет a1^2 + ... + an^2"""
@@ -54,6 +61,6 @@ def calc8_2(a, matrix):
         for j in range (start, len(matrix), 2):
             if matrix[i][j] in a:
                 matrix[i][j] = 0
-                print(f"Изменен элемент с индексами ({i}, {j})")
+                #print(f"Изменен элемент с индексами ({i}, {j})")
             
     return matrix
