@@ -1,3 +1,5 @@
+#решить СЛАУ (numpy)
+
 __author__ ="Borisova Ekaterina IVT20"
 
 import numpy as np
