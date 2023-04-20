@@ -1,5 +1,7 @@
 #работа со списком
 
+__author__ ="Borisova Ekaterina IVT20"
+
 import random
 
 def fill_old(listd:list, n:int):
