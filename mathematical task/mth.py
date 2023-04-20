@@ -8,9 +8,28 @@ import math as m
 
 
 def calc1(x, y):
+    """Даны действительные числа x и y. Получить (|x| - |y|) / (1 + |xy|)"""
     result = (m.fabs(x) - m.fabs(y)) / (1 + m.fabs(x*y))
     return result
 
+def calc2(num):
+    """Возвести в квадрат элементы, значения которых неотрицательны."""
+    for i in range(len(num)):
+        if num[i] > 0:
+            num[i] = num[i]**2
+            #print(f"{i+1}-е число изменено: {num[i]}")
+    return num
+
+def calc3(n):
+    """Определить число сотен в числе"""
+    return n // 100
+
+def calc4(n):
+    sum =  0
+    for i in range (n):
+        sum = sum + 1 / m.factorial(i+1)
+        print (f"При {i+1} сумма равна {sum:.4f}")
+    return sum
 
 def calc5(a):
     """вычисляет a1^2 + ... + an^2"""

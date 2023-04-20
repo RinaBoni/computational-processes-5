@@ -4,7 +4,12 @@
 
 __author__ = 'Borisova Ekaterina IVT20'
 
+import mth
+
+assert mth.calc3(543) == 5
+assert mth.calc3(1562) == 15
+
 n =int(input ("Введите число больше 99: "))
 
-print(f"В {n} количество сотен равно {n // 100} ")
+print(f"В {n} количество сотен равно {mth.calc3(n)} ")
 

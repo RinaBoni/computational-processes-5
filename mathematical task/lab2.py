@@ -4,15 +4,17 @@
 
 __author__ ='Borisova Ekaterina IVT20'
 
+import mth
+import ar
+
+assert mth.calc2([-6, 9, -7, 9, -2, -5, -2, 9, -13, 9]) == [-6, 81, -7, 81, -2, -5, -2, 81, -13, 81]
+assert mth.calc2([10, -3, 5, 0]) == [100, -3, 25, 0]
+
 num = []
 
 n = 3
 
-for i in range(n):
-    num.append(float(input(f"Введите {i+1}-е число: ")))
+num = (ar.ar_filling_minus(num, n))
     
-
-for i in range(n):
-    if num[i] > 0:
-        num[i] = num[i]**2
-        print(f"{i+1}-е число изменено: {num[i]}")
+print(f'Было  {num}')
+print(f'Стало {mth.calc2(num)}')

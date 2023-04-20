@@ -3,10 +3,12 @@
 
 __author__ ="Borisova Ekaterina IVT20"
 
-import math as m
+import mth
 
-sum =  0
+assert mth.calc4(10) == 1.7182818011463847
+assert mth.calc4(5) == 1.7166666666666668
+assert mth.calc4(2) == 1.5
 
-for i in range (10):
-    sum = sum + 1 / m.factorial(i+1)
-    print (f"При {i+1} сумма равна {sum:.4f}")
+n = 10
+
+mth.calc4(n)

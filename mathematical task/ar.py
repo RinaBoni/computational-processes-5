@@ -12,6 +12,12 @@ def ar_filling(a, n:int):
     a = np.random.randint(low=1, high=15, size=n)
     return a
 
+def ar_filling_minus(a, n:int):
+    """получет массив и кол-во элементов в нем, заполняет массив отрицательными и положительными и возвращает его"""
+    #a = np.random.randint(low=0, high=100, size=len(a))
+    a = np.random.randint(low=-15, high=15, size=n)
+    return a
+
 def mt_filling(a, n:int):
     """получет матрицу и кол-во элементов в ней, заполняет матрицу и возвращает его"""
     #a = np.random.randint(low=0, high=100, size=len(a))
