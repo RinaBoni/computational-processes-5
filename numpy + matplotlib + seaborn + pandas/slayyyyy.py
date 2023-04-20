@@ -17,21 +17,24 @@ def Kram(coefficient_matrix, free_terms_vector):
 coefficient_matrix = np.array([[15, 25, 35], [9, 8, 7], [18, 12, 10]])   #матрица коэфициентов
 free_terms_vector = np.array([12, 13, 14])  #вектор свободных членов
 
+#coefficient_matrix = np.array([[2., 5.], [1., -10.]])   #матрица коэфициентов
+#free_terms_vector = np.array([1., 3.])  #вектор свободных членов
+
+print(f'Матрица коэфициентов', f'{coefficient_matrix}', sep='\n')
+print(f'Вектор свободных членов', f'{free_terms_vector}', sep='\n')
+
 #метод solve
-X = np.linalg.solve(coefficient_matrix, free_terms_vector)   #вектор с решением
 print('Метод solve')
-print(f'Ответ  = {X}')
+print(f'Ответ  = {np.linalg.solve(coefficient_matrix, free_terms_vector)}')
 
 #метод обратной матрицы
 inverse_matrix = np.linalg.inv(coefficient_matrix)   #отратная матрица
-X2 = np.matmul(inverse_matrix,free_terms_vector)    #вектор с решением       умножение ом на всч
 print('Метод отбатной матрицы')
-print(f'Ответ = {X2}')
+print(f'Ответ = {np.matmul(inverse_matrix,free_terms_vector)}') #умножение ом на всч
 
 #метод Крамора
-X3 = Kram(coefficient_matrix, free_terms_vector)
 print('Метод Крамора')
-print(f'Ответ = {X3}')
+print(f'Ответ = {Kram(coefficient_matrix, free_terms_vector)}')
 
 
 
