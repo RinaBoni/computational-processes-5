@@ -3,6 +3,8 @@
 [Успеваемость](https://docs.google.com/spreadsheets/d/1HYFkxtTxYqXsZASsX_ZGsDWGBvevukQZhHgS5r-YzW4/edit#gid=1704187175)
 
 [Задания](https://github.com/ivtipm/ProcessCalculus/blob/master/plans/2023/plan.md#домашнее-задание)
+[множества Мандельброта c#](https://www.youtube.com/watch?v=eMSujMjhY0o)
+[множества Мандельброта c#](https://www.youtube.com/watch?v=qCgoDEQOSZk&list=PLurO3Bg1TJG9XUNhs3NrM2aQRy2hYWbU3)
 
 ## reports - отчеты
 
