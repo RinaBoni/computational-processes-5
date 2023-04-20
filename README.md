@@ -6,7 +6,11 @@
 
 ## mathematical task - математические задачи
 
-* Дописать тесты
+
+
+
+
+
 
 ## scraping - скрапинг по сайту забгу
 
@@ -16,19 +20,73 @@
 
 [про скапинг](https://tproger.ru/translations/skraping-sajta-s-pomoshhju-python-gajd-dlja-novichkov/)
 
+
+
+
+
+
+
+
 ## numpy + matplotlib + seaborn + pandas
-[про heatmap](https://www.codecamp.ru/blog/seaborn-heatmap/)
-   
-   - [X] создать случайную матрицу numpy array
-   - [X] решить СЛАУ (numpy)
-   - [X] построить тепловую карту на основе созданной матрицы
-   - [X] превратть матрицу в массив, построить гистограмму (seaborn)
-   - построить график любой сложной функции. построить график этой же функции с добавлением шума (numpy, matplotlib)[шум](https://habr.com/ru/articles/588270/);   [шум](https://habr.com/ru/articles/342906/)  не забудьте подпис к 
-       - [X] подписи к осям, 
-       - [X] заголовок графика, 
-       - [X] легенду, 
-       - координатную сетку
+
+### heatmap.py
+[про heatmap](https://www.codecamp.ru/blog/seaborn-heatmap/); [про heatmap](https://datastart.ru/blog/read/seaborn-heatmaps-13-sposobov-nastroit-vizualizaciyu-matricy-korrelyacii)
+   - создать случайную матрицу numpy array
+   - построить тепловую карту на основе созданной матрицы
+### hist.py
+   - создать случайную матрицу numpy array
+   - превратть матрицу в массив, построить гистограмму (seaborn)
+### plot.py
+[шум](https://habr.com/ru/articles/588270/);   [шум](https://habr.com/ru/articles/342906/)
+   - построить график любой сложной функции
+   - построить график этой же функции с добавлением шума (numpy, matplotlib)
+   - подписи к осям
+   - заголовок графика
+   - легенду
+   - координатную сетку
+###  slayyyyy.py
+   - решить СЛАУ (numpy)
+### covid.py
    - *дополнительно*: постройте графики выявленых заражений COVID-19 и смертности для нескольких стран
         - данные https://data.humdata.org/dataset/coronavirus-covid-19-cases-and-deaths
         - подсказка: используте библиотеку pandas
         - можно предложить свой набор данных для графика
+ 
+ 
+
+
+
+
+
+
+## list vs numpy vs torch
+Сравните время перемножения двух матриц
+- представляя матрицы как списки Python
+- представляя матрицы как numpy array
+- представляя матрицы как torch tensor (на GPU и CPU)
+
+Чтобы результаты были надёжными, повторите замеры несколько раз. Используйте такие размеры матриц, чтобы перемножение занимало как минимум несколько десятков секунд на CPU.
+### list1.py
+Работа со списком:
+   - заполнение
+   - перевод в матрицу
+   - умножение
+### great_battle.py
+Собственно само сравнение
+
+[выполнение на colab](https://colab.research.google.com/drive/1_O1jUjCjIv2QxSEDtWvcmDXlhebAKxLa?usp=sharing)
+
+
+
+
+
+
+
+## CMD UI
+Создайте версию программы 5 с командным интерфейсом. Программа должна принимать набор чисел как аргумент программы при запуске.
+
+Можно предложить свой вариант программы с командным интерфейсом.
+### CLI.py 
+   - основная программа
+### mth.py
+   - модуль с функциями
