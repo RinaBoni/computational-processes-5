@@ -8,6 +8,8 @@ import mth
 
 assert mth.calc3(543) == 5
 assert mth.calc3(1562) == 15
+assert mth.calc3(19512) == 1956
+
 
 n =int(input ("Введите число больше 99: "))
 
