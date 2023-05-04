@@ -80,7 +80,7 @@
 ### great_battle.py
 Собственно само сравнение
 
-[выполнение на colab](https://colab.research.google.com/drive/1_O1jUjCjIv2QxSEDtWvcmDXlhebAKxLa?usp=sharing)
+[выполнение на colab](https://colab.research.google.com/drive/1AM_t7N5CBi-aEtp7jtlhByEokphOtM78?authuser=1)
 
 
 
