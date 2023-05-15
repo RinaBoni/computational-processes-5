@@ -6,9 +6,9 @@ __author__ ="Borisova Ekaterina IVT20"
 
 import mth
 
-assert mth.calc7(59, 50) == 18.4501009215536
-assert mth.calc7(65, 33) == 18.836715542287997
-assert mth.calc7(40, 90) == 15.124518829762762
+assert round(mth.calc7(2, 2), 2) == 1.2
+assert round(mth.calc7(3, 2), 2) == 1.59
+assert round(mth.calc7(1, 1), 2) == 0.5
 
 n = 100
 m = 50
