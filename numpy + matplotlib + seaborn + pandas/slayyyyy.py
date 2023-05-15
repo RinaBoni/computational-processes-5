@@ -16,11 +16,18 @@ def Kram(coefficient_matrix, free_terms_vector):
     return result
 
 
+
 coefficient_matrix = np.array([[15, 25, 35], [9, 8, 7], [18, 12, 10]])   #матрица коэфициентов
 free_terms_vector = np.array([12, 13, 14])  #вектор свободных членов
 
 #coefficient_matrix = np.array([[2., 5.], [1., -10.]])   #матрица коэфициентов
 #free_terms_vector = np.array([1., 3.])  #вектор свободных членов
+
+#15x + 25y + 25z = 12
+#9x + 8y + 7z = 13
+#18x + 12y+ 10z = 14
+
+print('15x + 25y + 25z = 12\n9x + 8y + 7z = 13\n18x + 12y+ 10z = 14\n')
 
 print(f'Матрица коэфициентов', f'{coefficient_matrix}', sep='\n')
 print(f'Вектор свободных членов', f'{free_terms_vector}', sep='\n')
