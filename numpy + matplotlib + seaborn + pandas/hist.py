@@ -15,5 +15,7 @@ a = matrix.flatten()
 
 #создаем гисторгмму
 sns.histplot(a)
-
+#plt.hist(a)
+plt.xlabel('числа')
+plt.ylabel('количество')
 plt.show()
