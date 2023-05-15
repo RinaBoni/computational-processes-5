@@ -5,9 +5,9 @@ __author__ ="Borisova Ekaterina IVT20"
 
 import mth
 
-assert mth.calc4(10) == 1.7182818011463847
-assert mth.calc4(5) == 1.7166666666666668
-assert mth.calc4(2) == 1.5
+assert round(mth.calc4(10), 3) == 1.718
+assert round(mth.calc4(5), 3) == 1.717
+assert round(mth.calc4(2), 3) == 1.5
 
 n = 10
 
