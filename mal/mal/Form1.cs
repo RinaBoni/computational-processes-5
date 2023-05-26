@@ -80,12 +80,11 @@ namespace mal
             };
         }
 
-        void FillRgbPixel(int x, int y, int n, byte[] rgb, int width, int height)
+        //void FillRgbPixel(int x, int y, int n, byte[] rgb, int width, int height)
+        bool FillRgbPixel(int x, int y, int n, int width, int height, out int i)
         {
 
-            //вычисляем адрес цвета(??)(тк он в массиве rgb) зная координаты х и у
-            int p = (y * width + x) * 4;//у - адресс строки, каждая строка имеет длину image.widht, x - смещение данной строки, на один пиксель приходится 4 байта
-
+            
             //х0, y0 - точка от которой мы начинаем расчет/на которую навелись 
             var xy0 = ToLocal(x, y, width, height);
 
@@ -96,7 +95,7 @@ namespace mal
 
             //насколько блмзко мы расчитали пренадлежность пикеля к области, если i максимапльнт близка к n то ставим цвет близкий к ораньжевому, если бляже к 0 то цвет близкий к синему
             //расчет множества
-            int i;
+            //int i;
             for (i = 0; i < n; i++)
             {
                 //итеративные формулы
@@ -111,6 +110,33 @@ namespace mal
                 xn = xn_1;
                 yn = yn_1;
             }
+            return ok;
+
+            /*if (ok) zapol(&i
+            {
+                //каждое значение цвета имеет свое смещение, последний отвечает за альфа канал - прозрачность
+                rgb[p] = 179;//синий
+                rgb[p + 1] = 107;//зеленый
+                rgb[p + 2] = 0;//красный  
+                rgb[p + 3] = 255; //альфа
+            }
+            else
+            {
+                //коэфициент близости к синему
+                double k = 1 - (double)i / n;
+
+                //каждое значение цвета имеет свое смещение, последний отвечает за альфа канал - прозрачность
+                rgb[p] = (byte)((1 - k) * 76 + k * 179);//синий
+                rgb[p + 1] = (byte)((1 - k) * 148 + k * 107);//зеленый
+                rgb[p + 2] = (byte)((1 - k) * 255 + k * 0);//красный  
+                rgb[p + 3] = 255; //альфа
+            }*/
+        }
+
+        void ARGB(byte[] rgb, bool ok, int i, int n, int width, int x, int y)
+        {
+            //вычисляем адрес цвета(??)(тк он в массиве rgb) зная координаты х и у
+            int p = (y * width + x) * 4;//у - адресс строки, каждая строка имеет длину image.widht, x - смещение данной строки, на один пиксель приходится 4 байта
 
             if (ok)
             {
@@ -179,10 +205,19 @@ namespace mal
 
             int width = image.Width; int height = image.Height;
 
+            int i;
+            bool ok;
+            //bool FillRgbPixel(int x, int y, int n, int width, int height, out int i)
+            //ARGB(int p, byte[] rgb, bool ok, int i, int n)
             //передаем список, пройтись по нему чтобы он для каждого элемента в списке выполнил функцию
+            //пул процессов???  - его нет, пошло оно все нахуй
             Parallel.ForEach(points, p =>
             {
-                FillRgbPixel(p.X, p.Y, n, rgb, width, height);
+                ok = FillRgbPixel(p.X, p.Y, n, width, height, out int i);
+                ARGB(rgb, ok, i, n, width, p.X, p.Y);
+
+                //FillRgbPixel(p.X, p.Y, n, rgb, width, height);
+
             });
 
 
