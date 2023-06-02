@@ -31,6 +31,9 @@
             pbMain = new PictureBox();
             tbN = new TrackBar();
             lblInfo = new Label();
+            tbThreads = new TextBox();
+            label1 = new Label();
+            lNumThreads = new Label();
             ((System.ComponentModel.ISupportInitialize)pbMain).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tbN).BeginInit();
             SuspendLayout();
@@ -69,12 +72,39 @@
             lblInfo.TabIndex = 2;
             lblInfo.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // tbThreads
+            // 
+            tbThreads.Location = new Point(500, 596);
+            tbThreads.Name = "tbThreads";
+            tbThreads.Size = new Size(100, 23);
+            tbThreads.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(500, 578);
+            label1.Name = "label1";
+            label1.Size = new Size(119, 15);
+            label1.TabIndex = 4;
+            label1.Text = "количество потоков";
+            // 
+            // lNumThreads
+            // 
+            lNumThreads.AutoSize = true;
+            lNumThreads.Location = new Point(615, 603);
+            lNumThreads.Name = "lNumThreads";
+            lNumThreads.Size = new Size(0, 15);
+            lNumThreads.TabIndex = 5;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
+            BackColor = Color.LightCyan;
             ClientSize = new Size(937, 628);
+            Controls.Add(lNumThreads);
+            Controls.Add(label1);
+            Controls.Add(tbThreads);
             Controls.Add(lblInfo);
             Controls.Add(tbN);
             Controls.Add(pbMain);
@@ -91,5 +121,8 @@
         private PictureBox pbMain;
         private TrackBar tbN;
         private Label lblInfo;
+        private TextBox tbThreads;
+        private Label label1;
+        private Label lNumThreads;
     }
 }

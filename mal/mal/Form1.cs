@@ -84,7 +84,7 @@ namespace mal
         bool FillRgbPixel(int x, int y, int n, int width, int height, out int i)
         {
 
-            
+
             //х0, y0 - точка от которой мы начинаем расчет/на которую навелись 
             var xy0 = ToLocal(x, y, width, height);
 
@@ -205,20 +205,76 @@ namespace mal
 
             int width = image.Width; int height = image.Height;
 
+            //int nubThreds = int.TryParse(tbThreads.Text);   // считываем размер матрицы
+            int nubThreds;
+            bool checkThread = int.TryParse(tbThreads.Text, out nubThreds);
+
+
             int i;
             bool ok;
             //bool FillRgbPixel(int x, int y, int n, int width, int height, out int i)
             //ARGB(int p, byte[] rgb, bool ok, int i, int n)
             //передаем список, пройтись по нему чтобы он для каждого элемента в списке выполнил функцию
-            //пул процессов???  - его нет, пошло оно все нахуй
-            Parallel.ForEach(points, p =>
+            //пул процессов???  - 
+            /*for (int j = 0; j < nubThreds - 1; j++)
+            {
+                // расчёт работы для потоков
+                // точка старта для
+                int from = j * points.Count / nubThreds;
+                int to = (j + 1) * points.Count / nubThreds;
+                // e - дополнительная работа для потока если работа не рапределяется равномерно по всем потокам
+                int e = 0;
+                // проверка для необходимости в дополнительной работе для потока
+                if (j <= points.Count / nubThreds)
+                {
+                    e++;
+                }
+
+                // создание отдельного потока
+                await Task.Run(() =>
+                {
+                    // цыкл заполениния листа новыми значениями
+                    for (int j = from + e; j < to + e; j++)
+                    {
+                        points[j] = 1.2635263256525;
+                    }
+                });
+            }*/
+
+            if (checkThread)
+            {
+                Parallel.ForEach(points, new ParallelOptions { MaxDegreeOfParallelism = nubThreds }, p =>
+                {
+                    ok = FillRgbPixel(p.X, p.Y, n, width, height, out int i);
+                    ARGB(rgb, ok, i, n, width, p.X, p.Y);
+
+                    //FillRgbPixel(p.X, p.Y, n, rgb, width, height);
+
+                });
+                lNumThreads.Text = $"кол-во потоков: {nubThreds}";
+            }
+
+            else
+            {
+                nubThreds = 6;
+                Parallel.ForEach(points, new ParallelOptions { MaxDegreeOfParallelism = nubThreds }, p =>
+                {
+                    ok = FillRgbPixel(p.X, p.Y, n, width, height, out int i);
+                    ARGB(rgb, ok, i, n, width, p.X, p.Y);
+
+                    //FillRgbPixel(p.X, p.Y, n, rgb, width, height);
+
+                });
+            }
+            
+            /*Parallel.ForEach(points, new ParallelOptions { MaxDegreeOfParallelism = nubThreds }, p =>
             {
                 ok = FillRgbPixel(p.X, p.Y, n, width, height, out int i);
                 ARGB(rgb, ok, i, n, width, p.X, p.Y);
 
                 //FillRgbPixel(p.X, p.Y, n, rgb, width, height);
 
-            });
+            });*/
 
 
             //заносим данные обртно в поинтер (в битмат)
