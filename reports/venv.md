@@ -18,6 +18,7 @@
 ## Как сделать
 
 Открываем в нужной нам папке командную строку, пишем
+`py -m venv`
 
 ![1](https://github.com/RinaBoni/computational-processes-6/assets/83748388/d34a10eb-1381-416d-a03a-17f5b325c31b)
 
@@ -30,6 +31,7 @@
 ## Активация
 
 Для активации нужно ввести команду
+`.\my_venv\Scripts\activate.bat`
 
 ![2](https://github.com/RinaBoni/computational-processes-6/assets/83748388/b1349d16-c57e-4ebf-8396-c970602d31b0)
 
@@ -43,10 +45,12 @@
 ![3](https://github.com/RinaBoni/computational-processes-6/assets/83748388/383d9d56-38d7-4aff-ac38-ea3ce05bf68c)
 
 Посмотрим какие библиотеки установлены в виртуальное окружение 
+`pip freeze`
 
 ![4](https://github.com/RinaBoni/computational-processes-6/assets/83748388/b5b59881-d068-42f5-a854-76a704a67440)
 
 Если нужно будет передать кому-нибудь проект или по какой-то причине удалить виртуальное окружение, его можно сохранить в файл requirements.txt
+`pip freeze > requirements.txt`
 
 ![5](https://github.com/RinaBoni/computational-processes-6/assets/83748388/248e5a7c-e1dc-4b20-90ce-1fad157e7d9e)
 
@@ -59,6 +63,7 @@
 ![7](https://github.com/RinaBoni/computational-processes-6/assets/83748388/a64c9fd9-a684-4ca0-b0cb-23a9be434148)
 
 Когда нужно будет установить требуемые для проекта библиотеки, в новом виртуальном окружении пишем
+`pip install -r requirements.txt`
 
 ![10](https://github.com/RinaBoni/computational-processes-6/assets/83748388/57779d20-5ee8-4457-86fe-3a0f1dd78241)
 
@@ -67,6 +72,7 @@
 ## Дективация 
 
 Дле деактивации вводим команду 
+`deactivate`
 
 ![6](https://github.com/RinaBoni/computational-processes-6/assets/83748388/33e8f0d8-b2b9-4ea5-9e5e-39d0bdcca0c6)
 
